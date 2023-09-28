@@ -1,0 +1,18 @@
+
+#root {
+  /* height: 100vh; */
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+  /* background-color: #EFEFEF; */
+}
+
+body{
+  background-color: #EFEFEF;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Raleway,sans-serif;
+}
