@@ -20,7 +20,7 @@ const PokedexIdPage = () => {
 
     const firstType = pokemon?.types[0].type.name
     const types = pokemon?.types.map((type) => type.type.name);
-    console.log(types)
+    // console.log(types)
 
   
   return (
