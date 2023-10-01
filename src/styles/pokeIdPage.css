@@ -48,9 +48,9 @@
 }
 
 .btn_back{
-    position: absolute;
-    top: 140px;
-    left: 20px;
+    position: fixed;
+    top: 150px;
+    left: 120px;
     width: 60px;
     aspect-ratio: 1;
     display: flex;
@@ -60,7 +60,6 @@
     border-radius: 50%;
     font-weight: 500;
     font-size: 20px;
-    color: #fff;
     cursor: pointer;
     text-decoration: none
 }
@@ -191,34 +190,46 @@
     position: relative;
     font-size: 32px;
     top: 33px;
-    left: 7px;
     width: max-content;
     background-color: #fff;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .hr__stats{
     margin-top: 17px;
     margin-bottom: 40px;
 }
+
 .stats_pokeId{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: .5em
+}
+
+.stats__sss{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 }
 
-.stats__clave{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 16px;
-    text-transform: uppercase;
+.class_value{
+    width: 100%;
+    position: relative;
+    background-color: #EFEFEF;
+    color: #EFEFEF;
+    border: 1px solid #000;
+    border: none;
 }
 
-.stats__value{
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
+.class_value::before{
+    width: var(--bar);
+    height: 100%;
+    content: '';
+    position: absolute;
+    left: 0;
+    background-color: #EDA73B;
 }
 
 .movements_pokeId{
@@ -344,4 +355,16 @@
         left: 19px;
         padding: 0px 5px;
     } 
+
+    .btn_back{
+        position: absolute;
+        top: 125px;
+        left: 50px;
+        width: 35px;
+        font-size: 16px;
+    }
 }
+
+
+
+

@@ -10,11 +10,7 @@ const PokePage = ({ firstItem, setFirstItem, quantity }) => {
     }
 
     const sum = () => {
-        if (pageNumbers <= limit){
             setFirstItem(firstItem+1)
-        }else{
-            setFirstItem(pageNumbers)
-        }
     }
 
     const rest = () => {
@@ -22,17 +18,17 @@ const PokePage = ({ firstItem, setFirstItem, quantity }) => {
     }
   return (
     <div className='container__pagination'>
-        <button className='btn__pagination' onClick={rest}>Previous</button>
+        <button className='btn__pagination previous' onClick={rest} disabled={firstItem === 1}>Previous</button>
 
         <div className='container__paginationActual'>
             {
             pageNumbers.map((page, i) => {
-            return <button className='btn__actual' key={i} onClick={ () => setFirstItem(page)} > {page} </button>
+            return <button className={`btn__pagination actual ${page === firstItem ? 'is-current' :"" }`}key={i} onClick={ () => setFirstItem(page)} > {page} </button>
             })   
             }
         </div>
 
-        <button className='btn__pagination' onClick={sum}>Next</button>
+        <button className='btn__pagination next' onClick={sum} disabled={firstItem >= limit}>Next</button>
     </div>
   )
 }

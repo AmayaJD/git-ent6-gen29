@@ -20,7 +20,7 @@ const PokedexPage = () => {
   
   // console.log(typeSelected)
 
-  const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=20'
+  const url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=30}`
   const [ pokemons, getPokemons, getTypePokemon ] = useFetch(url)
   
   useEffect(() => {
@@ -32,6 +32,7 @@ const PokedexPage = () => {
   }, [typeSelected])
 
   console.log(pokemons)
+  
   const handlesearch = e => {
     e.preventDefault()
     setInputValue(inputSearch.current.value.trim().toLowerCase())

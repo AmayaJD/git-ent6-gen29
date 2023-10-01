@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
 import { useEffect } from "react"
 import '../styles/pokeIdPage.css'
@@ -16,7 +16,7 @@ const PokedexIdPage = () => {
       getPokemon()
     }, [id])
     
-    // console.log(pokemon)
+    console.log(pokemon)
 
   return (
     <div className="container_id">
@@ -25,13 +25,11 @@ const PokedexIdPage = () => {
         <div className="circle2"></div>
         <img className="img_pokedex2" src={pokedex} alt="image" />
       </header>
-      <a href="" className="btn_back">Back </a>
-
+      <Link className="btn_back" to='/pokedex'> <i class='bx bx-arrow-back'></i> </Link>
       <article className="container___pokeStats">
         <header className="header__pokeStats">
           <img className="imgId" src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
         </header>
-     
         <div className="container__abilitie">
             <section>
                 <div className="pokeId">#{pokemon?.id}</div>
@@ -61,30 +59,60 @@ const PokedexIdPage = () => {
                     </li>
               </ul>
             </section>
-          
           <h2 className="title__stats">Stats</h2>
           <hr  className="hr__stats"/>
+              <ul className="stats_pokeId">
 
-          <section className="stats_pokeId">
-            
+                <li className="stats__sss">
+                  <span>HP</span>
+                  <span>{pokemon?.stats[0].base_stat}/ 250</span>
+                </li>
+                <li className="stats__sss">
+                    <span className="class_value" style={{'--bar': `${pokemon?.stats[0].base_stat}%`}}>{ pokemon?.stats[0].base_stat}</span>    
+                 </li>
+                 
+                <li className="stats__sss">
+                  <span>ATTACK</span>
+                  <span>{pokemon?.stats[1].base_stat}/ 250</span>
+                </li>
+                <li className="stats__sss">
+                  <span className="class_value" style={{'--bar': `${pokemon?.stats[1].base_stat}%`}}>{ pokemon?.stats[1].base_stat}</span>
+                </li>
+                
+                <li className="stats__sss">
+                  <span>DEFENSE</span>
+                  <span>{pokemon?.stats[2].base_stat}/ 250</span>
+                </li>
+                <li className="stats__sss">
+                  <span className="class_value" style={{'--bar': `${pokemon?.stats[2].base_stat}%`}}>{ pokemon?.stats[2].base_stat}</span>
+                </li>
 
-            <div className="stats__clave">
-              { pokemon?.stats.map(statsInfo => (
-              
-                    <span key={statsInfo.stat.url}>{statsInfo.stat.name} :</span>
-              
-                )) }
-            </div>
-            <div className="stats__value">
-              { pokemon?.stats.map(statsValue =>
-              
-                  <span key={statsValue.base_stat}>{statsValue.base_stat} / 255</span>
-                  ) }
-            </div>
-          </section>
+                <li className="stats__sss">
+                  <span>SPECIAL-ATTACK</span>
+                  <span>{pokemon?.stats[3].base_stat}/ 250</span>
+                </li>
+                <li className="stats__sss">
+                  <span className="class_value" style={{'--bar': `${pokemon?.stats[3].base_stat}%`}}>{ pokemon?.stats[3].base_stat}</span>
+                </li>
+
+                <li className="stats__sss">
+                  <span>SPECIAL-DEFENSE</span>
+                  <span>{pokemon?.stats[4].base_stat}/ 250</span>
+                </li>
+                <li className="stats__sss">
+                  <span className="class_value" style={{'--bar': `${pokemon?.stats[4].base_stat}%`}}>{ pokemon?.stats[4].base_stat}</span>
+                </li>
+
+                <li className="stats__sss">
+                  <span>SPEED</span>
+                  <span>{pokemon?.stats[5].base_stat}/ 250</span>
+                </li>
+                <li className="stats__sss">
+                  <span className="class_value" style={{'--bar': `${pokemon?.stats[5].base_stat}%`}}>{ pokemon?.stats[5].base_stat}</span>
+                </li>
+              </ul>
         </div>
       </article>
-
       <article className="movements_pokeId">
           <h2 className="title__moves">Movements</h2>
           <hr className="hr__moves"/>

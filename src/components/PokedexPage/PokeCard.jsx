@@ -17,14 +17,16 @@ const PokeCard = ({ url }) => {
   const handleNavigate = () => {
     navigate(`/pokedex/${pokemon.id}`)
   }
+
+  const firstType = pokemon?.types[0].type.name
   
   return (
-    <article className="container_pokeCard" onClick={handleNavigate}>
-      <header className="header_poke">
+    <article className={`container_pokeCard ${firstType}-border`} onClick={handleNavigate}>
+      <header className={`header_poke ${firstType}-gradient`}>
         <img className="img_pokemonCard" src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
       </header>
       <section className="section_pokeCard">
-        <h3 className="name_pokemon">{pokemon?.name}</h3>
+        <h3 className={`name_pokemon ${firstType}-text`}>{pokemon?.name}</h3>
         <ul className="type_poke">
           <span className="type__container">
             {
