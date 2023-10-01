@@ -12,13 +12,14 @@ const PokeCard = ({ url }) => {
     getPokemon()
   }, [])
 
-  console.log(pokemon)
+  console.log(pokemon) 
 
   const handleNavigate = () => {
     navigate(`/pokedex/${pokemon.id}`)
   }
 
   const firstType = pokemon?.types[0].type.name
+  // console.log(firstType)
   
   return (
     <article className={`container_pokeCard ${firstType}-border`} onClick={handleNavigate}>
@@ -32,7 +33,7 @@ const PokeCard = ({ url }) => {
             {
           
               pokemon?.types.map(typeInfo => (
-                <span key={typeInfo.type.url}>{typeInfo.type.name}</span>
+                <span key={typeInfo.type.url}>{typeInfo.type.name} </span>
               ))
             }
           </span>

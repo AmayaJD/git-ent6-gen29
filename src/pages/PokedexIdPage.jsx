@@ -16,8 +16,13 @@ const PokedexIdPage = () => {
       getPokemon()
     }, [id])
     
-    console.log(pokemon)
+    // console.log(pokemon)
 
+    const firstType = pokemon?.types[0].type.name
+    const types = pokemon?.types.map((type) => type.type.name);
+    console.log(types)
+
+  
   return (
     <div className="container_id">
       <header className="header_pokedexPage">
@@ -25,9 +30,9 @@ const PokedexIdPage = () => {
         <div className="circle2"></div>
         <img className="img_pokedex2" src={pokedex} alt="image" />
       </header>
-      <Link className="btn_back" to='/pokedex'> <i class='bx bx-arrow-back'></i> </Link>
+      <Link className="btn_back" to='/pokedex'> <i className='bx bx-arrow-back'></i> </Link>
       <article className="container___pokeStats">
-        <header className="header__pokeStats">
+        <header className={`header__pokeStats ${firstType}-gradient`}>
           <img className="imgId" src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
         </header>
         <div className="container__abilitie">
@@ -48,7 +53,7 @@ const PokedexIdPage = () => {
                   <ul className="poke__caracter2">
             
                     <li className="poke__type"><span>Type </span> <div className="type__value">{ pokemon?.types.map(typeInfo => (
-                        <div className="type__value" key={typeInfo.type.url}> <div className="type__valueItem">{typeInfo.type.name}</div></div>
+                        <div className='type__value' key={typeInfo.type.url}> <div className={`type__valueItem ${firstType}-gradient`}>{typeInfo.type.name}</div></div>
                         ))
                       }</div>
                     </li>

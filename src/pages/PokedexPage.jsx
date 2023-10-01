@@ -31,7 +31,7 @@ const PokedexPage = () => {
     }
   }, [typeSelected])
 
-  console.log(pokemons)
+  // console.log(pokemons)
   
   const handlesearch = e => {
     e.preventDefault()

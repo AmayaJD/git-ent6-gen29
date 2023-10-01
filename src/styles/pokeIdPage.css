@@ -72,7 +72,7 @@
 }
 
 .header__pokeStats{
-    background-color: #5fda4f;
+    /* background-color: #5fda4f; */
     height: 120px;
     border-radius: 10px 10px 0 0;
 }
@@ -165,7 +165,7 @@
 }
 
 .type__valueItem{
-    background-color: #559C33;
+    /* background-color: #559C33; */
     color: white;
     padding: 5px 20px;
 }
